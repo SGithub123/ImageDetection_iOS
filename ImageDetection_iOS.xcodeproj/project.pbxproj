@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		45E4051E271B5E940010A0F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E4051D271B5E940010A0F9 /* AppDelegate.swift */; };
 		45E40520271B5E940010A0F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E4051F271B5E940010A0F9 /* SceneDelegate.swift */; };
-		45E40522271B5E940010A0F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E40521271B5E940010A0F9 /* ViewController.swift */; };
 		45E40525271B5E940010A0F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E40523271B5E940010A0F9 /* Main.storyboard */; };
 		45E40527271B5E9A0010A0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E40526271B5E9A0010A0F9 /* Assets.xcassets */; };
 		45E4052A271B5E9A0010A0F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E40528271B5E9A0010A0F9 /* LaunchScreen.storyboard */; };
+		45E40536271B5FB70010A0F9 /* ImageDetectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E40535271B5FB60010A0F9 /* ImageDetectVC.swift */; };
+		45E4053A271B650D0010A0F9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E40539271B650D0010A0F9 /* Extensions.swift */; };
+		45E4053E271B67560010A0F9 /* MobileNetV2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 45E4053D271B67560010A0F9 /* MobileNetV2.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45E4051A271B5E940010A0F9 /* ImageDetection_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageDetection_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E4051D271B5E940010A0F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45E4051F271B5E940010A0F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45E40521271B5E940010A0F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		45E40524271B5E940010A0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45E40526271B5E9A0010A0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45E40529271B5E9A0010A0F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45E4052B271B5E9A0010A0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45E40535271B5FB60010A0F9 /* ImageDetectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetectVC.swift; sourceTree = "<group>"; };
+		45E40539271B650D0010A0F9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		45E4053D271B67560010A0F9 /* MobileNetV2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNetV2.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,41 @@
 		45E4051C271B5E940010A0F9 /* ImageDetection_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				45E4053C271B67560010A0F9 /* ML Model */,
+				45E40538271B64FB0010A0F9 /* Extension */,
+				45E40534271B5F9B0010A0F9 /* Image Detection */,
 				45E4051D271B5E940010A0F9 /* AppDelegate.swift */,
 				45E4051F271B5E940010A0F9 /* SceneDelegate.swift */,
-				45E40521271B5E940010A0F9 /* ViewController.swift */,
 				45E40523271B5E940010A0F9 /* Main.storyboard */,
 				45E40526271B5E9A0010A0F9 /* Assets.xcassets */,
 				45E40528271B5E9A0010A0F9 /* LaunchScreen.storyboard */,
 				45E4052B271B5E9A0010A0F9 /* Info.plist */,
 			);
 			path = ImageDetection_iOS;
+			sourceTree = "<group>";
+		};
+		45E40534271B5F9B0010A0F9 /* Image Detection */ = {
+			isa = PBXGroup;
+			children = (
+				45E40535271B5FB60010A0F9 /* ImageDetectVC.swift */,
+			);
+			path = "Image Detection";
+			sourceTree = "<group>";
+		};
+		45E40538271B64FB0010A0F9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				45E40539271B650D0010A0F9 /* Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		45E4053C271B67560010A0F9 /* ML Model */ = {
+			isa = PBXGroup;
+			children = (
+				45E4053D271B67560010A0F9 /* MobileNetV2.mlmodel */,
+			);
+			path = "ML Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45E40522271B5E940010A0F9 /* ViewController.swift in Sources */,
+				45E40536271B5FB70010A0F9 /* ImageDetectVC.swift in Sources */,
 				45E4051E271B5E940010A0F9 /* AppDelegate.swift in Sources */,
 				45E40520271B5E940010A0F9 /* SceneDelegate.swift in Sources */,
+				45E4053E271B67560010A0F9 /* MobileNetV2.mlmodel in Sources */,
+				45E4053A271B650D0010A0F9 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

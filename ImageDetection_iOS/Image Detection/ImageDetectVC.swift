@@ -17,6 +17,9 @@ class ImageDetectVC: UIViewController {
     
     var machineModel = MobileNetV2()
 
+    let imgArr = ["heart","send","bottle","zebra","jaguar","instagram","facebook","monkey","panda","redFox","user","comment","tiger","elephant","banana","nature"]
+    
+    var currentIndex : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +30,7 @@ class ImageDetectVC: UIViewController {
     func Setup() {
         
         imagePicker.delegate = self
+        imgView.image = UIImage(named: imgArr[0])
         
     }
     
@@ -35,10 +39,15 @@ class ImageDetectVC: UIViewController {
         alertFunc()
     }
     
+    @IBAction func ShuffleImg_BtnTap(_ sender:UIButton) {
+        
+        let randomNo = Int.random(in: 0...imgArr.count - 1)
+        self.currentIndex = randomNo
+        imgView.image = UIImage(named: imgArr[self.currentIndex])
+    }
     
     
     @IBAction func DetectImage_BtnTap(_ sender:UIButton) {
-        
         
         // Image Resize
         guard let img = imgView.image,

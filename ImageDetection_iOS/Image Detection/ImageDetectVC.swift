@@ -30,8 +30,15 @@ class ImageDetectVC: UIViewController {
     func Setup() {
         
         imagePicker.delegate = self
-        imgView.image = UIImage(named: imgArr[0])
+        randomImage()
+    }
+    
+    func randomImage() {
         
+        self.imageName_Lbl.text = ""
+        let randomNo = Int.random(in: 0...imgArr.count - 1)
+        self.currentIndex = randomNo
+        imgView.image = UIImage(named: imgArr[self.currentIndex])
     }
     
     
@@ -40,10 +47,7 @@ class ImageDetectVC: UIViewController {
     }
     
     @IBAction func ShuffleImg_BtnTap(_ sender:UIButton) {
-        
-        let randomNo = Int.random(in: 0...imgArr.count - 1)
-        self.currentIndex = randomNo
-        imgView.image = UIImage(named: imgArr[self.currentIndex])
+        randomImage()
     }
     
     
